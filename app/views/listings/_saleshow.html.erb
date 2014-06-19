@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 open-house-info">
+    <% if @listing.open_houses.upcoming.any? %>
+      <h2>Open House</h2>
+      <% @listing.open_houses.upcoming.each do |oh|%>
+        <p><%= oh.lead_page_time %></p>
+        <% end %>
+        <p><%= @listing.street_address %>, at (<%= @listing.cross_streets %>)</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="underline">
+        <h3 class="blue centered"><%= "#{@listing.neighborhood.name}, " if @listing.neighborhood %><%= "#{@listing.bedrooms}, bedrooms" if @listing.bedrooms %><%= @listing.listing_type %></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="blue centered"><%= @listing.headline %></h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <% @listing.images.sorted.each do |image| %>
+      <div class="col-md-4">
+        <%= link_to image_tag(image.gallery_image(:medium), alt: "gallery image", class: "listing-image"), image.gallery_image(:lightbox), rel: :lazybox %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <p><%= @listing.description %> Asking price: $<%= @listing.price %>!</p>
+      <h2 class="centered"> To see this property call Aguayo & Huebener at (718) 788-8200
+        <% if @agent%>
+          <%= "& ask for #{@agent.name},"%>
+            <%unless @agent.phone.nil? %>
+              <%=" cell: #{@agent.phone}"%>
+            <% end %> about <%= @listing.code %>
+        <% end %>
+      </h2>
+      <p class="centered">Or e-mail us at <%= mail_to "Sales7@AHRlty.com", "Sales7@AHRlty.com" %>(For the quickest response please include your name and phone number.) If you've been in contact with one of our agents, please call that agent to see this property.</p>
+    </div>
+  </div>
+</div>

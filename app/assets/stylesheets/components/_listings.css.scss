@@ -1,0 +1,110 @@
+@import "baseline";
+
+.rentals-column {
+  @extend .sales-column
+}
+
+.sales-column {
+  text-align: center;
+
+  .sales-column-header {
+    color: darken($gray, 30%);
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 10px;
+    border-bottom: solid darken($gray, 10%) 1px;
+    margin-bottom: 0;
+  }
+
+}
+
+.listing-box {
+  border-bottom: 1px $gray solid;
+  padding: 10px 0;
+  text-align: center;
+  background-color: $peach;
+
+  .sub-headline {
+    font-size: 1em;
+    color: $purple;
+    margin: 0 0 10px 0;
+  }
+  .listing-box-image {
+    width: 100%;
+    padding: 0 5px;
+  }
+  .headline {
+    a {
+      text-decoration: underline;
+    }
+    font-size: 1.7em;
+  }
+  .description {
+    padding: 0 10px;
+  }
+  .highlight {
+    font-weight: bold;
+  }
+}
+
+.rentals-container {
+   margin-left: 5%;
+ }
+ .rentals-index {
+   .sales-column-header{
+     border-bottom: none;
+   }
+   .listing-box {
+   margin: 0.25em;
+   padding: 1em;
+   width: 21.5em;
+   }
+ }
+
+.rental-listing{
+  padding-left: 0;
+}
+
+.underline {
+  border-bottom: 1px solid $gray;
+  margin-bottom: 10px;
+}
+
+.listing-image{
+  margin: 10px auto;
+}
+
+.open-house-headline {
+  h2 {
+    font-size: 2em;
+    color: $red;
+  }
+  p {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: $red;
+  }
+  p:last-child {
+    color: $gray;
+  }
+}
+
+.open-house-info {
+  text-align: center;
+  h2 {
+    font-size: 2em;
+    font-weight: 700;
+    color: $red;
+    text-decoration: underline;
+  }
+  p {
+    font-weight: bold;
+  }
+}
+
+.dialog {
+  text-align: center;
+  h1 {
+    color: $gray;
+  }
+}

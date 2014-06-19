@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-8">
+      <div class="row">
+        <% @listing.images.sorted.each do |image| %>
+          <div class="col-md-4">
+            <%= link_to image_tag(image.gallery_image(:thumb), alt: "gallery_image", class: "listing-image"),image.gallery_image(:lightbox), rel: :lazybox %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="blue"><%= @listing.headline %></h1>
+          <h3 class="blue"><%= "#{@listing.neighborhood.name} - " if @listing.neighborhood %><%= @listing.price %></h3>
+          <p><%= @listing.description %></p>
+          <% if @agent %>
+            <ul class ="rental-listing">
+              <li><b>Broker:</b> <%= @agent.name %></li>
+              <li><b>Phone:</b> <%= @agent.phone %></li>
+              <li><b>Email:</b> <%= mail_to @agent.email%></li>
+              <li><b>Listing:</b> <%= @listing.code %></li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

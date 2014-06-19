@@ -1,0 +1,32 @@
+@import "baseline";
+
+.navigation {
+
+  padding-left: 0;
+  text-align: center;
+
+  .sales, .contact, .rentals {
+    list-style-type: none;
+    display: inline;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: $gray;
+  }
+  a {
+    color: white;
+    font-size: 125%;
+    font-weight: 700;
+  }
+  a:hover,
+  a:visited {
+    color: white;
+    font-size: 125%;
+  }
+}
+.nav_logo {
+  margin: 10px 0;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+}

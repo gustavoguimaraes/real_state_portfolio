@@ -1,0 +1,4 @@
+<ul class="js-images" data-sort-url="<%= sort_admin_listing_images_url(listing) %>">
+  <%= button_to("Add Image", new_admin_listing_image_path(listing), method: :get, class: "add-image-button") %>
+  <%= render listing.images.sorted %>
+</ul>

@@ -1,0 +1,37 @@
+//BUTTONS
+@import "baseline";
+li{
+  list-style-type: none;
+  &.white {
+    background-color: $white;
+  }
+  &.gray {
+    background-color: $gray;
+  }
+  &.dk-gray{
+    background-color: $dk-grey;
+  }
+  &.black {
+    background-color: $black;
+    color: $white;
+  }
+  &.red{
+    background-color: $red;
+  }
+  &.dk-red{
+    background-color: $dk-red;
+  }
+  &.peach{
+    background-color: $peach;
+  }
+  &.blue{
+    background-color: $blue;
+  }
+  &.purple{
+    background-color: $purple;
+  }
+  &.brown{
+    background-color: $brown;
+  }
+}
+

@@ -1,0 +1,43 @@
+//BUTTONS
+@import "baseline";
+
+.btn {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 2px solid $black;
+  border-radius: 6px;
+  width: 200px;
+    &.btn-black {
+      background-color: $black;
+      color: $white;
+      border: none;
+        &.btn-black:hover,
+        &.btn-black:visited{
+          background-color: $gray;
+          color: $white;
+        }
+    }
+    &.btn-red {
+      background-color: $red;
+      color: $white;
+      border: none;
+        &.btn-red:hover,
+        &.btn-red:visited{
+          background-color: $dk-red;
+          color: $white;
+        }
+    }
+    &.btn-gray {
+      background-color: $gray;
+      color: $white;
+      border: none;
+       &.btn-gray:hover,
+        &.btn-gray:visited{
+          background-color: $dk-grey;
+          color: $white;
+        }
+    }
+}

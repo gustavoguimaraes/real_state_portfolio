@@ -1,0 +1,71 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $black;
+  font-weight: 700;
+}
+
+.centered {
+  text-align: center;
+}
+
+h1.emphasis,
+h2.emphasis,
+h3.emphasis,
+h4.emphasis,
+h5.emphasis,
+h6.emphasis {
+  color: $red;
+  font-weight: 700;
+}
+
+h1.blue,
+h2.blue,
+h3.blue,
+h4.blue,
+h5.blue,
+h6.blue {
+  color: $blue;
+  font-weight: 700;
+}
+
+p {
+  color: $black;
+  &.date{
+    color:$red;
+  }
+  &.address{
+    color:$brown;
+    font-size: 18px;
+  }
+  &.schedule-notice {
+    color: $red;
+    font: {
+      size: 18px;
+      weight: bold;
+    }
+    height: 30px;
+  }
+  &.center-text {
+     text-align: center;
+  }
+}
+
+a {
+  color: $gray;
+  font-weight: 500;
+  font-size: 105%;
+}
+
+a:hover,
+a:visited {
+  color: $black;
+  font-size: 105%;
+}

@@ -1,0 +1,24 @@
+<div class='listing-box js-listing-box'>
+  <% if listing.open_houses.upcoming.any? %>
+    <div class="open-house-headline">
+      <h2> Open House </h2>
+        <% listing.open_houses.upcoming.each do |open_house| %>
+          <p> <%= open_house.lead_page_time %></p>
+        <% end %>
+      <p><%= listing.street_address %>, at (<%= listing.cross_streets %>)</p>
+    </div>
+  <% end %>
+  <% unless listing.status == "Available" %>
+    <h1 class="sold"><%= listing.status.upcase %></h1>
+  <% end %>
+  <h3 class="sub-headline"><%= listing.sub_headline %></h3>
+  <%= link_to image_tag(listing.headline_image(:lead), class: 'listing-box-image'),listing %>
+  <h2 class="headline"><%= link_to listing.headline, listing %></h2>
+  <p class="description"><%=  listing.description %> - $<%= listing.price%></p>
+  <p>
+    <% if listing.rental? && listing.user %>
+      Email <%= mail_to listing.user.email, listing.user.name %> or call <span class="highlight"><%= listing.user.phone %></span> or
+    <% end %>
+    Call <span class="highlight">(718) 788-8200</span> to see <span class="highlight"><%= listing.code %></span> Email <%= mail_to "Sales7@AHRlty.com", "Sales7@AHRlty.com" %>
+  </p>
+</div>

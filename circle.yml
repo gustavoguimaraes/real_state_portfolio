@@ -1,0 +1,9 @@
+deployment:
+  staging:
+    branch: master
+    commands:
+      - heroku maintenance:on --app ahrlty-staging
+      - git push git@heroku.com:ahrlty-staging.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app ahrlty-staging
+      - heroku restart web --app ahrlty-staging
+      - heroku maintenance:off --app ahrlty-staging

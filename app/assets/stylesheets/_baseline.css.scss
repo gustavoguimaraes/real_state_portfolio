@@ -1,0 +1,39 @@
+/** Variables **/
+$black: #000000;
+$red: #FF0000;
+$dk-red: #CC0000;
+$white: #FFFFFF;
+$purple: #8b008b;
+$blue: #004CA4;
+$brown: #8B4513;
+$gray: #6d85ab;
+$dk-grey: #404040;
+$peach: #ffebcd;
+
+/***  MIXINS ***/
+
+/*** BROWSER ***/
+@mixin transition {
+  // use this to add the transition that is on buttons to any element
+  -webkit-transition: color 0.1s ease,background-color 0.1s ease,border-color 0.1s ease,opacity 0.1s ease;
+  -moz-transition: color 0.1s ease,background-color 0.1s ease,border-color 0.1s ease,opacity 0.1s ease;
+  -ms-transition: color 0.1s ease,background-color 0.1s ease,border-color 0.1s ease,opacity 0.1s ease;
+  -o-transition: color 0.1s ease,background-color 0.1s ease,border-color 0.1s ease,opacity 0.1s ease;
+  transition: color 0.1s ease,background-color 0.1s ease,border-color 0.1s ease,opacity 0.1s ease;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix { display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+
+.clearfix { display: block; }

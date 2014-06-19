@@ -1,0 +1,8 @@
+<% if signed_in? %>
+Hi <%= current_user.name %> You look good today. <br>
+<%= image_tag current_user.avatar %> <br>
+Would you like to <%= link_to 'sign out', destroy_user_session_path, method: :delete %>?
+<% else %>
+hi! <%= link_to "Sign in with Google Apps", user_omniauth_authorize_path(:google_oauth2) %>
+
+<% end %>
